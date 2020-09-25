@@ -19,7 +19,6 @@ const buttonStyle = {
     border: "none",
     borderRadius: "3px",
     position: "relative",
-    padding: "12px 30px",
     margin: ".3125rem 1px",
     fontSize: "12px",
     fontWeight: "400",
@@ -45,7 +44,6 @@ const buttonStyle = {
       display: "inline-block",
       top: "0",
       fontSize: "1.1rem",
-      marginRight: "4px",
       verticalAlign: "middle"
     },
     "& svg": {
@@ -54,7 +52,6 @@ const buttonStyle = {
       top: "0",
       width: "18px",
       height: "18px",
-      marginRight: "4px",
       verticalAlign: "middle"
     },
     "&$justIcon": {
@@ -186,6 +183,14 @@ const buttonStyle = {
       color: "#fff",
       boxShadow:
         "0 14px 26px -12px rgba(51, 51, 51, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(51, 51, 51, 0.2)"
+    }
+  },
+  linkedin: {
+    backgroundColor: "rgb(0, 119, 181)",
+    color: "#fff",
+    "&:hover,&:focus": {
+      backgroundColor: "rgb(0, 119, 181)",
+      color: "#fff"
     }
   },
   simple: {
