@@ -8,7 +8,7 @@ export default function GitHubButton(props){
     const {link} = props;
     return(
         <div>
-            <Button color="github" className={" fab fa-github"} href={link} target="_blank">
+            <Button color="primary" className={" fab fa-github"} href={link} target="_blank">
                 <GitHub/>
             </Button>
         </div>

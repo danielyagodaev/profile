@@ -2,16 +2,15 @@ import React from "react";
 
 import Button from "./Button.js";
 
-import Linkedin from '@material-ui/icons/LinkedIn';
+import EmailOutlined from '@material-ui/icons/EmailOutlined';
 
-export default function LinkedinButton(props){
+export default function EmailButton(props){
     const {link} = props;
-    return (
+    return(
         <div>
             <Button color="primary" className={" fab"} href={link} target="_blank">
-                <Linkedin/>
+                <EmailOutlined/>
             </Button>
         </div>
     )
-
 }
