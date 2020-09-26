@@ -8,7 +8,7 @@ export default function FacebookButton(props) {
     const {link} = props;
     return (
         <div>
-            <Button color="facebook" className={" fab fa-facebook"} href={link} target="_blank">
+            <Button color="header" className={" fab fa-facebook"} href={link} target="_blank">
                 <Facebook/>
             </Button>
         </div>

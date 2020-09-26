@@ -1,3 +1,7 @@
+import {
+  upperBodyColor
+} from "../../material-kit-react";
+
 const cardStyle = {
   card: {
     border: "0",
@@ -23,6 +27,10 @@ const cardStyle = {
   },
   cardCarousel: {
     overflow: "hidden"
+  },
+  upperBody: {
+    backgroundColor: upperBodyColor,
+    color: "#FFFFFF"
   }
 };
 

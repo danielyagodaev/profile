@@ -8,7 +8,7 @@ export default function EmailButton(props){
     const {link} = props;
     return(
         <div>
-            <Button color="primary" className={" fab"} href={link} target="_blank">
+            <Button color="header" className={" fab"} href={link} target="_blank">
                 <EmailOutlined/>
             </Button>
         </div>

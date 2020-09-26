@@ -14,8 +14,9 @@ const useStyles = makeStyles(styles);
 
 export default function CardBody(props) {
   const classes = useStyles();
-  const { className, children, ...rest } = props;
+  const { color, className, children, ...rest } = props;
   const cardBodyClasses = classNames({
+    [classes[color]]: color,
     [classes.cardBody]: true,
     [className]: className !== undefined
   });
@@ -28,5 +29,6 @@ export default function CardBody(props) {
 
 CardBody.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  color: PropTypes.string
 };
