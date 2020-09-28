@@ -30,7 +30,15 @@ export default function NavigationButtons(props){
                     href=""
                     color="transparent"
                 >
-                    <h5>Experience</h5>
+                    <h5>Skills</h5>
+                </Button>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <Button
+                    href=""
+                    color="transparent"
+                >
+                    <h5>Projects</h5>
                 </Button>
             </ListItem>
         </List>

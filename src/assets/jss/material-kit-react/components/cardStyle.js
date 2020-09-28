@@ -1,13 +1,16 @@
 import {
-  upperBodyColor
+  headerColor,
+  upperBodyColor,
+  lowerBodyColor,
+  skillsColor,
 } from "../../material-kit-react";
 
 const cardStyle = {
   card: {
     border: "0",
-    marginBottom: "30px",
-    marginTop: "30px",
-    borderRadius: "6px",
+    marginBottom: "0",
+    marginTop: "0",
+    borderRadius: "0",
     color: "rgba(0, 0, 0, 0.87)",
     background: "#fff",
     width: "100%",
@@ -19,7 +22,8 @@ const cardStyle = {
     minWidth: "0",
     wordWrap: "break-word",
     fontSize: ".875rem",
-    transition: "all 300ms linear"
+    transition: "all 300ms linear",
+    alignItems: "center",
   },
   cardPlain: {
     background: "transparent",
@@ -31,6 +35,14 @@ const cardStyle = {
   upperBody: {
     backgroundColor: upperBodyColor,
     color: "#FFFFFF"
+  },
+  lowerBody: {
+    backgroundColor: lowerBodyColor,
+    color: headerColor
+  },
+  skills:{
+    backgroundColor: skillsColor,
+    color: headerColor
   }
 };
 
