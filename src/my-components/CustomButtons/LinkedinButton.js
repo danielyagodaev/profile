@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "./Button.js";
+import Button from "../../core-components/CustomButtons/Button.js";
 
 import Linkedin from '@material-ui/icons/LinkedIn';
 

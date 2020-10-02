@@ -11,8 +11,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
 // core components
-import GridContainer from "./../../components/Grid/GridContainer.js";
-import GridItem from "./../../components/Grid/GridItem.js";
+import GridContainer from "../Grid/GridContainer.js";
+import GridItem from "../Grid/GridItem.js";
 
 import styles from "./../../assets/jss/material-kit-react/components/navPillsStyle.js";
 
@@ -120,7 +120,8 @@ NavPills.propTypes = {
     "danger",
     "success",
     "info",
-    "rose"
+    "rose",
+    "header"
   ]),
   direction: PropTypes.string,
   horizontal: PropTypes.shape({

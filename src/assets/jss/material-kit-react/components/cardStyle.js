@@ -30,7 +30,10 @@ const cardStyle = {
     boxShadow: "none"
   },
   cardCarousel: {
-    overflow: "hidden"
+    overflow: "hidden",
+    display: "inline-block",
+    height: "15rem",
+    width: "15rem",
   },
   upperBody: {
     backgroundColor: upperBodyColor,

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "./Button.js";
+import Button from "../../core-components/CustomButtons/Button.js";
 
 export default function GmailButton(props){
     const {link} = props;
