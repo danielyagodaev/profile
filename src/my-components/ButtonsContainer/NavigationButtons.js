@@ -11,34 +11,25 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 
 const useStyles = makeStyles(styles);
 
-export default function NavigationButtons(){
+function createSingleNavigationButton(classes, linkData){
+    return(
+        <ListItem className={classes.listItem}>
+            <Button
+                href={linkData.link}
+                color="transparent"
+            >
+                <h5>{linkData.name}</h5>
+            </Button>
+        </ListItem>
+    )
+}
+
+export default function NavigationButtons(navigationLinks){
     const classes = useStyles();
+    const allNavButtons = navigationLinks.map((linkData) => createSingleNavigationButton(classes, linkData));
     return(
         <List className={classes.list}>
-            <ListItem className={classes.listItem}>
-                <Button
-                    href=""
-                    color="transparent"
-                >
-                    <h5>About Me</h5>
-                </Button>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-                <Button
-                    href=""
-                    color="transparent"
-                >
-                    <h5>Skills</h5>
-                </Button>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-                <Button
-                    href=""
-                    color="transparent"
-                >
-                    <h5>Projects</h5>
-                </Button>
-            </ListItem>
+            {[...allNavButtons]}
         </List>
     )
 }

@@ -13,8 +13,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import carouselStyles from "../../assets/jss/material-kit-react/views/componentsSections/carouselStyle.js";
 import componentsStyle from "../../assets/jss/material-kit-react/views/components";
 
-import project1 from "../../img/checkers-online.jpg";
-
 const styles = {
     textCenter: {
         textAlign: "center"
@@ -25,7 +23,20 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function ProjectsCarousel(){
+function createSingleProjectView(projectData){
+    return(
+        <Project
+            img={projectData.img}
+            projectName={projectData.name}
+            projectDescription={projectData.description}
+            projectLink={projectData.link}
+        />
+    );
+}
+
+export default function ProjectsCarousel(props){
+    const {id, color, list} = props;
+    const allProjects = list.map((projectData) => createSingleProjectView(projectData));
     const classes = useStyles();
     const settings = {
         dots: true,
@@ -36,30 +47,27 @@ export default function ProjectsCarousel(){
         autoplay: false
     };
     return (
-        <Card color="lowerBody" className={classes.textCenter}>
-            <CardHeader>
-                <h3>Projects</h3>
-                <hr style={{borderTop: "solid 4px"}}/>
-            </CardHeader>
-            <div className={classes.section}>
-                <div className={classes.container}>
-                    <GridContainer>
-                        <GridItem xs={12} sm={12} md={8}>
-                            <Card carousel>
-                                <Carousel {...settings}>
-                                    <Project
-                                        img={project1}
-                                        projectName="Checkers"
-                                        projectDescription="Play Checkers Online"
-                                        projectLink="https://danielyagodaev.github.io/checkers/"
-                                    />
-                                </Carousel>
-                            </Card>
-                        </GridItem>
-                    </GridContainer>
+        <div id={id}>
+            <Card color={color} className={classes.textCenter}>
+                <CardHeader>
+                    <h3>Projects</h3>
+                    <hr style={{borderTop: "solid 4px"}}/>
+                </CardHeader>
+                <div className={classes.section}>
+                    <div className={classes.container}>
+                        <GridContainer>
+                            <GridItem xs={12} sm={12} md={8}>
+                                <Card carousel>
+                                    <Carousel {...settings}>
+                                        {[...allProjects]}
+                                    </Carousel>
+                                </Card>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
                 </div>
-            </div>
-        </Card>
+            </Card>
+        </div>
     );
 }
 

@@ -5,14 +5,16 @@ import NavigationButtons from "../../my-components/ButtonsContainer/NavigationBu
 import SocialMediaButtonsContainer from "../../my-components/ButtonsContainer/SocialMediaButtonsContainer";
 
 export default function HeaderLinks(props){
-    const navigationButtons = new NavigationButtons();
-    const socialMediaButtonsContainer = new SocialMediaButtonsContainer();
+    const {navigationLinks, socialMediaLinks, color} = props;
+    const navigationButtons = new NavigationButtons(navigationLinks);
+    const socialMediaButtonsContainer = new SocialMediaButtonsContainer(socialMediaLinks, color);
     return(
         <Header
-            color="header"
+            color={color}
             leftLinks={navigationButtons}
             rightLinks={socialMediaButtonsContainer}
-            style={{marginBottom: "0", borderRadius: "0"}}>
-        </Header>
+            style={{marginBottom: "0", borderRadius: "0"}}
+            fixed
+        />
     )
 }

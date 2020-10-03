@@ -2,18 +2,15 @@ import React from "react";
 
 import Button from "../../core-components/CustomButtons/Button.js";
 
-import GitHub from '@material-ui/icons/GitHub';
+import Twitter from '@material-ui/icons/Twitter';
 
-export default function GitHubButton(props){
+export default function TwitterButton(props){
     const {link, color} = props;
     return(
         <div>
             <Button color={color} className={" fab"} href={link} target="_blank">
-                <GitHub/>
+                <Twitter/>
             </Button>
         </div>
     )
-
 }
-
-

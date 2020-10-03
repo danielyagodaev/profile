@@ -14,51 +14,28 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
+function createSingleNavPill(skillData){
+    console.log(JSON.stringify(skillData));
+    const skillsList = skillData.list.map((skill) => (<p>{skill}</p>));
+    return{
+        tabButton: skillData.category,
+        tabContent: (<span>{[...skillsList]}</span>)
+    };
+}
+
 export default function Skills(props){
+    const {id, color, skillsData} = props;
+    const allNavPills = skillsData.map((skillData) => createSingleNavPill(skillData));
     const classes = useStyles();
     return(
-        <Card color="skills" className={classes.textCenter}>
-            <CardHeader>
-                <h3>SKILLS</h3>
-                <hr style={{borderTop: "solid 4px"}}/>
-            </CardHeader>
-            <NavPills color="header" tabs={[
-                {
-                    tabButton: "Programming Languages",
-                    tabContent: (
-                        <span>
-                                    <p>Node.js</p>
-                                    <p>Javascript</p>
-                                    <p>Python</p>
-                                    <p>Java</p>
-                                    <p>PHP</p>
-                                    <p>C/C++</p>
-                                </span>
-                    )
-                },
-                {
-                    tabButton: "Databases",
-                    tabContent: (
-                        <span>
-                                    <p>Memcached</p>
-                                    <p>MySQL</p>
-                                    <p>Redis</p>
-                                    <p>ELK</p>
-                                </span>
-                    )
-                },
-                {
-                    tabButton: "Other",
-                    tabContent: (
-                        <span>
-                                    <p>Git</p>
-                                    <p>AWS</p>
-                                    <p>Docker</p>
-                                    <p>Grafana</p>
-                                </span>
-                    )
-                }]}>
-            </NavPills>
-        </Card>
+        <div id={id}>
+            <Card color={color} className={classes.textCenter}>
+                <CardHeader>
+                    <h3>SKILLS</h3>
+                    <hr style={{borderTop: "solid 4px"}}/>
+                </CardHeader>
+                <NavPills color="header" tabs={allNavPills}/>
+            </Card>
+        </div>
     )
 }

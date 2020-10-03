@@ -7,8 +7,6 @@ import CardBody from "../../core-components/Card/CardBody";
 
 import imagesStyles from "../../assets/jss/material-kit-react/imagesStyles";
 
-import profilePhoto from "../../img/profile.jpg";
-
 const styles = {
     ...imagesStyles,
     textCenter: {
@@ -18,22 +16,23 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function Main(){
+export default function Main(props){
+    const {color, profileImage, name, title} = props;
     const classes = useStyles();
     return (
-        <Card color="upperBody" className={classes.textCenter}>
+        <Card color={color} className={classes.textCenter} style={{marginTop: "5rem"}}>
             <br/>
             <img
                 style={{height: "180px", width: "180px", display: "block", border: "0.4em solid"}}
                 className={classes.imgRoundedCircle}
-                src={profilePhoto}
+                src={profileImage}
                 title="Profile Image"
                 alt="Card-img-cap"
             />
-            <CardBody color="upperBody">
-                <h3>Daniel Yagodaev</h3>
+            <CardBody color={color}>
+                <h3>{name}</h3>
                 <hr style={{borderTop: "solid 4px"}}/>
-                <h5>Senior Software Engineer</h5>
+                <h5>{title}</h5>
             </CardBody>
         </Card>
     )
