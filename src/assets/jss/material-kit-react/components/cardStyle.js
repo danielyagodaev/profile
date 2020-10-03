@@ -32,8 +32,8 @@ const cardStyle = {
   cardCarousel: {
     overflow: "hidden",
     display: "inline-block",
-    height: "15rem",
-    width: "15rem",
+    height: "25rem",
+    width: "25rem",
   },
   upperBody: {
     backgroundColor: upperBodyColor,

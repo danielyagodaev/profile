@@ -23,9 +23,11 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-function createSingleProjectView(projectData){
+function createSingleProjectView(projectData, projectColor, buttonColor){
     return(
         <Project
+            color={projectColor}
+            buttonColor={buttonColor}
             img={projectData.img}
             projectName={projectData.name}
             projectDescription={projectData.description}
@@ -35,8 +37,8 @@ function createSingleProjectView(projectData){
 }
 
 export default function ProjectsCarousel(props){
-    const {id, color, list} = props;
-    const allProjects = list.map((projectData) => createSingleProjectView(projectData));
+    const {id, color, projectColor, buttonColor, list} = props;
+    const allProjects = list.map((projectData) => createSingleProjectView(projectData, projectColor, buttonColor));
     const classes = useStyles();
     const settings = {
         dots: true,
@@ -57,7 +59,7 @@ export default function ProjectsCarousel(props){
                     <div className={classes.container}>
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={8}>
-                                <Card carousel>
+                                <Card carousel color={projectColor}>
                                     <Carousel {...settings}>
                                         {[...allProjects]}
                                     </Carousel>

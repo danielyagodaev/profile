@@ -69,6 +69,8 @@ ReactDOM.render(
       />
       <ProjectsCarousel
           color="lowerBody"
+          projectColor="skills"
+          buttonColor="header"
           id="projects"
           list={
               [
@@ -77,7 +79,7 @@ ReactDOM.render(
                       name: "Checkers",
                       description: "Play Checkers Online",
                       link: "https://danielyagodaev.github.io/checkers/",
-                  }
+                  },
               ]
           }
       />
